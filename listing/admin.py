@@ -1,11 +1,5 @@
 from django.contrib import admin
 
-from .models import (
-    Availability,
-    Hotel,
-    Room,
-)
+from .models import Availability
 
 admin.site.register(Availability)
-admin.site.register(Hotel)
-admin.site.register(Room)

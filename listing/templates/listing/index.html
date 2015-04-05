@@ -1,0 +1,14 @@
+{% extends "listing/base.html" %}
+{% block content %}
+<div class="ui grid">
+  <div class="three column row">
+    {% for listing in listings %}
+    <div class="column">
+      <a href="{% url 'listing:detail' listing.id %}">
+        {{ listing.room }}
+      </a>
+      <div>{{ listing.period.lower }}</div>
+      <div>{{ listing.period.upper }}</div>
+    </div>
+  {% endfor %}
+{% endblock content %}

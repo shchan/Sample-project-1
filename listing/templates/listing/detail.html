@@ -1,0 +1,7 @@
+<div>
+<a href="{% url 'listing:detail' listing.id %}">
+  {{ listing.room }}
+</a>
+</div>
+<div>{{ listing.period.lower }}</div>
+<div>{{ listing.period.upper }}</div>
