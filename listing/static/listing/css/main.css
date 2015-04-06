@@ -18,3 +18,10 @@ Author's custom styles
     font-size: 2em;
     transition: all 3s;
 }
+
+#accounts-modal .modal-header {
+    border-bottom: 0;
+}
+#accounts-modal .modal-dialog {
+    width: 400px;
+}
