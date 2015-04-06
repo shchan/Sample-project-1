@@ -1,0 +1,26 @@
+{% extends "listing/base.html" %}
+
+{% block jumbo %}
+<div class="jumbotron">
+    <div class="container">
+        {% block search %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                {% include "listing/search_form.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock search %}
+{% endblock jumbo %}
+
+{% block content %}
+<style>
+.responsive-img {
+    height: 100%;
+}
+</style>
+<div class="container">
+    {% include "listing/listing_list.html" %}
+</div>
+{% endblock content %}

@@ -1,14 +1,24 @@
 {% extends "listing/base.html" %}
-{% block content %}
-<div class="ui grid">
-  <div class="three column row">
-    {% for listing in listings %}
-    <div class="column">
-      <a href="{% url 'listing:detail' listing.id %}">
-        {{ listing.room }}
-      </a>
-      <div>{{ listing.period.lower }}</div>
-      <div>{{ listing.period.upper }}</div>
+
+{% block jumbo %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Best Staycation Spots</h1>
+        <p>Just for you to relax.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        {% block search %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                {% include "listing/search_form.html" %}
+            </div>
+        </div>
     </div>
-  {% endfor %}
+</div>
+{% endblock search %}
+{% endblock jumbo %}
+
+{% block content %}
+<div class="container">
+    {% include "listing/listing_list.html" %}
+</div>
 {% endblock content %}

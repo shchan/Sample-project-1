@@ -1,7 +1,16 @@
-<div>
-<a href="{% url 'listing:detail' listing.id %}">
-  {{ listing.room }}
-</a>
+{% extends "listing/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <a href="{% url 'listing:detail' availability.id %}">
+                    {{ availability.room }}
+                </a>
+            </div>
+            <div>{{ availability.period.lower }}</div>
+            <div>{{ availability.period.upper }}</div>
+        </div>
+    </div>
 </div>
-<div>{{ listing.period.lower }}</div>
-<div>{{ listing.period.upper }}</div>
+{% endblock content %}

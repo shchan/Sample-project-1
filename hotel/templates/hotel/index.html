@@ -1,0 +1,12 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+<ul>
+  {% for hotel in hotels %}
+  <li>
+      <div>{{ hotel.name }}</div>
+      <div>{{ hotel.room_set.count }} rooms</div>
+      <div>{{ hotel.address }}</div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

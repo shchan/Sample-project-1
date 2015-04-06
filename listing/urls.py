@@ -4,7 +4,8 @@ from django.contrib import admin
 
 urlpatterns = [
     # e.g. /listing/
-    url(r'^$', views.index),
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^s/', views.SearchView.as_view(), name='search'),
     # e.g. /listing/1/
-    url(r'^(?P<listing_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 ]

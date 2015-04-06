@@ -1,0 +1,15 @@
+<form id="search-form" class="form-inline" method="get">
+    <div class="form-group">
+        <label class="sr-only" for="where">Where</label>
+        <input type="text" class="form-control" id="where" placeholder="Where" value="{{ form.where }}">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="checkIn">Check In</label>
+        <input type="text" class="form-control datepicker" id="checkIn" placeholder="Check In" value="{{ form.checkIn }}">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="checkOut">Check Out</label>
+        <input type="text" class="form-control datepicker" id="checkOut" placeholder="Check Out" value="{{ form.checkOut }}">
+    </div>
+    <button type="submit" class="btn btn-default">Find a place!</button>
+</form>

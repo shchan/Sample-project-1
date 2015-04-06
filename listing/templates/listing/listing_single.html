@@ -1,0 +1,21 @@
+{% load imagekit %}
+<div class="col-md-6 col-sm-12">
+    <div class="thumbnail">
+        <a href="{% url 'listing:detail' listing.id %}">
+            {% thumbnail '1000x550' listing.room.featured_image -- class="listing-image" %}
+        </a>
+        <div class="price">
+            $100
+        </div>
+        <div class="caption">
+            <h4>{{ listing.room.hotel }}</h4>
+            <h5>{{ listing.room.beds }}-bed</h5>
+            {% if listing.period.upper %}
+            <div>{{ listing.period.lower }}</div>
+            <div>{{ listing.period.upper }}</div>
+            {% else %}
+            <div>Available from {{ listing.period.lower }}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{% for listing in listings %}
+{% if forloop.counter|divisibleby:"2" %}
+<div class="row">
+{% endif %}
+{% include "listing/listing_single.html" %}
+{% if forloop.counter|divisibleby:"2" %}
+</div>
+{% endif %}
+{% endfor %}
