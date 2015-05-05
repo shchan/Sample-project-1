@@ -1,24 +1,26 @@
-{% extends "listing/base.html" %}
+{% extends "base.html" %}
 
 {% block jumbo %}
 <div class="jumbotron">
-    <div class="container">
-        <h1>Best Staycation Spots</h1>
-        <p>Just for you to relax.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-        {% block search %}
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-                {% include "listing/search_form.html" %}
-            </div>
-        </div>
+  <div class="container">
+    <div class="row text-center">
+      <h1>Staycations</h1>
+      <h2>at your fingertips</h2>
     </div>
+    {% block search %}
+    <div class="row search">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        {% include "listing/search_form.html" %}
+      </div>
+    </div>
+    {% endblock search %}
+  </div>
 </div>
-{% endblock search %}
 {% endblock jumbo %}
 
 {% block content %}
 <div class="container">
-    {% include "listing/listing_list.html" %}
+  {% include "listing/exclusive_list.html" %}
+  {% include "listing/listing_list.html" %}
 </div>
 {% endblock content %}
