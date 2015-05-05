@@ -1,0 +1,86 @@
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Muli:400,300);
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+nav {
+    position: absolute;
+}
+nav a,
+nav button {
+    font-weight: 600;
+}
+
+nav .logo {
+    background: url('../img/hotelhare_logo.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    display: block;
+    width: 250px;
+}
+
+.jumbotron {
+    padding: 40px 0 60px 0;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #d5efb3 48%, #c8f291 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(48%,#d5efb3), color-stop(100%,#c8f291)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#d5efb3 48%,#c8f291 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#d5efb3 48%,#c8f291 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#d5efb3 48%,#c8f291 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%,#d5efb3 48%,#c8f291 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c8f291',GradientType=0 ); /* IE6-9 */
+}
+
+.jumbotron .search {
+    padding-top: 32px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption {
+    padding: 1em;
+}
+
+.thumbnail .price {
+    position: absolute;
+    top: 1em;
+    padding: 0.3em 1em;
+    background: rgba(255, 255, 255, 0.8) fixed top;
+    font-size: 2em;
+    transition: all 3s;
+}
+
+#accounts-modal .modal-header,
+#login-modal .modal-header {
+    border-bottom: 0;
+}
+#accounts-modal .modal-dialog,
+#login-modal .modal-dialog {
+    width: 400px;
+}
+
+img.cover {
+    width: 100%;
+}
+
+footer {
+    padding: 24px;
+}
+
+.hotel-desc {
+    padding: 24px;
+}
+
+.hotel-desc-right {
+}
+
+.hotel-desc-right .price {
+    font-size: 36px;
+}
