@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load imagekit %}
+{% block content %}
+{% include "listing/booking_modal.html" %}
+<img src="{{ booking.room.featured_image.url }}" alt="" class="cover"/>
+<div class="container">
+  <div class="row">
+    <div class="hotel-desc">
+      <div class="col-sm-8 col-xs-12">
+        <h2>{{ booking.room.hotel }} <span class="label label-danger">Hot</span></h2>
+        <h3>{{ booking.room.beds }}-bed</h3>
+        {% if booking.period.upper %}
+        <div>{{ booking.period.lower }}</div>
+        <div>{{ booking.period.upper }}</div>
+        {% else %}
+        <div>Available from {{ booking.period.lower }}</div>
+        {% endif %}
+      </div>
+      <div class="col-sm-4 col-xs-12 hotel-desc-right">
+        <label for="book"></label>
+        <button type="button" name="book" id="book" value="You've booked." class="btn btn-lg btn-block btn-success" disabled="disabled">
+          You've booked this room.
+        </button>
+        <div class="price">
+          $100
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
