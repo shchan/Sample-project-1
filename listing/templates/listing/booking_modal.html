@@ -1,0 +1,39 @@
+<div class="modal fade" id="booking-modal" tabindex="-1" role="dialog" aria-labelledby="bookinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="card-wrapper">
+        </div>
+        <div>
+          <form id="creditcard">
+            <div class="form-group">
+              <input class="form-control" name="number" placeholder="Card number">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="name" placeholder="Name on card">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="expiry" placeholder="Expiry">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="cvc" placeholder="CVC">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" value="Book" class="btn btn-success"/>
+        <button type="text" value="" class="btn btn-link" data-toggle="modal" data-target="#booking-modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$('form#creditcard').card({
+  // a selector or DOM element for the container
+  // where you want the card to appear
+  container: '.card-wrapper', // *required*
+  // all of the other options from above
+});
+</script>

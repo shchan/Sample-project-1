@@ -10,12 +10,22 @@
       <a class="navbar-brand logo" href="/" alt="HotelHare logo"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right" role="form">
+      <form class="navbar-form navbar-right" role="form" method="post" action="{% url 'account_logout' %}">
         <div class="form-group">
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#accounts-modal">Sign Up</button>
+          {% if request.user.is_authenticated %}
+          <span>{{ request.user.email }}</span>
+          {% else %}
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#accounts-modal">Sign Up</button>
+          {% endif %}
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login-modal">Log In</button>
+          {% if request.user.is_authenticated %}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link">Log Out</button>
+          </form>
+          {% else %}
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login-modal">Log In</button>
+          {% endif %}
         </div>
       </form>
     </div><!--/.navbar-collapse -->

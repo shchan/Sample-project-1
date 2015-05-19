@@ -1,36 +1,40 @@
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        {% comment %}
-        {% load socialaccount %}
-        {% providers_media_js %}
-        <a class="btn btn-default btn-lg btn-block" href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Connect</a>
-        {% endcomment %}
-        <p></p>
-        <form>
+<form class="login" id="login_form" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="/" />
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          {% comment %}
+          {% load socialaccount %}
+          {% providers_media_js %}
+          <a class="btn btn-default btn-lg btn-block" href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Connect</a>
+          {% endcomment %}
+          <p></p>
+          <form>
             <div class="form-group">
-                <div class="input-group input-group-lg">
-                    <input type="email" class="form-control input-lg" id="email" placeholder="Enter email">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                    </span>
-                </div>
+              <div class="input-group input-group-lg">
+                <input type="email" class="form-control input-lg" id="email" placeholder="Enter email">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </span>
+              </div>
             </div>
             <div class="form-group">
-                <div class="input-group input-group-lg">
-                    <input type="password" class="form-control input-lg" id="password" placeholder="Password">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                    </span>
-                </div>
+              <div class="input-group input-group-lg">
+                <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                </span>
+              </div>
             </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <input type="submit" value="Login" class="btn btn-success"/>
-        <button type="text" value="" class="btn btn-link">Forgot?</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Login" class="btn btn-success"/>
+          <button type="text" value="" class="btn btn-link">Forgot?</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</form>
