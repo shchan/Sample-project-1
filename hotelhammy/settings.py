@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'imagekit',
     'hotel',
     'listing',
+    'booking',
 )
 
 SITE_ID = 2

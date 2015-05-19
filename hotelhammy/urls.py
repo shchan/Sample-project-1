@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^hotel/', include('hotel.urls')),
     url(r'^listing/', include('listing.urls', namespace="listing")),
+    url(r'^booking/', include('booking.urls', namespace='booking')),
 
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

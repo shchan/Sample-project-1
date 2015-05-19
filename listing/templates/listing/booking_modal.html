@@ -1,3 +1,6 @@
+<form class="form-inline" method="POST" action="/booking/">
+{% csrf_token %}
+<input type="hidden" name="room" value="{{ availability.room.pk }}" />
 <div class="modal fade" id="booking-modal" tabindex="-1" role="dialog" aria-labelledby="bookinModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -5,7 +8,17 @@
         <div class="card-wrapper">
         </div>
         <div>
-          <form id="creditcard">
+          <div class="form-group">
+            <label class="sr-only" for="checkIn">Check In</label>
+            <input type="text" class="form-control datepicker" id="checkIn" placeholder="Check In" value="{{ form.checkIn }}" data-provide="datepicker" name="checkIn" required>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="checkOut">Check Out</label>
+            <input type="text" class="form-control datepicker" id="checkOut" placeholder="Check Out" value="{{ form.checkOut }}" data-provide="datepicker" name="checkOut" required>
+          </div>
+
+              <!--
+          <div id="creditcard">
             <div class="form-group">
               <input class="form-control" name="number" placeholder="Card number">
             </div>
@@ -18,9 +31,10 @@
             <div class="form-group">
               <input class="form-control" name="cvc" placeholder="CVC">
             </div>
-          </form>
-        </div>
-      </div>
+          </div>
+          -->
+            </div>
+          </div>
       <div class="modal-footer">
         <input type="submit" value="Book" class="btn btn-success"/>
         <button type="text" value="" class="btn btn-link" data-toggle="modal" data-target="#booking-modal">Cancel</button>
@@ -28,12 +42,13 @@
     </div>
   </div>
 </div>
+</form>
 
 <script type="text/javascript" charset="utf-8">
-$('form#creditcard').card({
+// $('#creditcard').card({
   // a selector or DOM element for the container
   // where you want the card to appear
-  container: '.card-wrapper', // *required*
+  // container: '.card-wrapper', // *required*
   // all of the other options from above
-});
+// });
 </script>

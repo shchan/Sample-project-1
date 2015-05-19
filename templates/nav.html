@@ -13,7 +13,9 @@
       <form class="navbar-form navbar-right" role="form" method="post" action="{% url 'account_logout' %}">
         <div class="form-group">
           {% if request.user.is_authenticated %}
-          <span>{{ request.user.email }}</span>
+          <a>
+            <span>{{ request.user.email }}</span>
+          </a>
           {% else %}
           <button type="button" class="btn btn-link" data-toggle="modal" data-target="#accounts-modal">Sign Up</button>
           {% endif %}
