@@ -185,3 +185,7 @@ SOCIALACCOUNT_PROVIDERS = \
             'LOCALE_FUNC': lambda request: 'en_US',
             'VERIFIED_EMAIL': False,
             'VERSION': 'v2.2'}}
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_USERNAME_REQUIRED = False

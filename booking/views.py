@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import generic
+
 from psycopg2.extras import DateRange
 
 from booking.models import Booking
@@ -20,7 +21,8 @@ class DetailView(generic.DetailView):
         if not start or not end:
             return HttpResponse()
         room = Room.objects.get(pk=room_id)
-        Booking.objects.create(
+        booking = Booking.objects.create(
+            made_by=request.user,
             room=room,
             period=DateRange(start, end))
-        return HttpResponse()
+        return redirect('/booking/%s/' % booking.pk)
