@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = environ['DJANGO_SECRET_KEY']
+SECRET_KEY = 'vKEkKtWHTZ3kXUlvR4L9y0rCAd4IoXMy5vIoIRCJel6hKQCWD7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,17 +100,14 @@ WSGI_APPLICATION = 'hotelhammy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': environ['DB_NAME'],
-        'USER': environ['DB_USER'],
-        'PASSWORD': environ['DB_PASSWORD'],
-        'HOST': environ['DB_HOST'],
-        'PORT': environ['DB_PORT'],
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'vMl9ahnZb6',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
-# https://devcenter.heroku.com/articles/getting-started-with-django#django-settings
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
